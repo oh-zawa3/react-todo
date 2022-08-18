@@ -1,1 +1,1 @@
-export { VersatileForm } from "./VersatileForm"
+export { TemplateForm } from "./TemplateForm"

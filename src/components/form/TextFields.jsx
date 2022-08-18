@@ -21,7 +21,7 @@ export const TextFields = (props) => {
         name={title}
         label={`ここに${title}を入力`}
         variant="outlined"
-        value={textValue}
+        value={textValue[title]}
         onChange={handleChange}
       />
     </Box>

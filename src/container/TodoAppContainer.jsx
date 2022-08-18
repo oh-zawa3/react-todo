@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import { VersatileForm } from "../components";
+import { TemplateForm } from "../components";
 
 export const TodoAppContainer = memo(() => {
   return (
     <>
-      <VersatileForm />
+      <TemplateForm />
     </>
   );
 });

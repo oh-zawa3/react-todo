@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useState } from "react";
-import { SELECT_VALUES } from "../../const";
+import { initialTextValue, SELECT_VALUES } from "../../const";
 import { SelectBox } from "./SelectBox";
 import { TextFields } from "./TextFields";
 
-export const VersatileForm = memo(() => {
+export const TemplateForm = memo(() => {
   const [selectValue, setSelectValue] = useState(SELECT_VALUES[1]);
-  const [textValue, setTextValue] = useState("");
+  const [textValue, setTextValue] = useState(initialTextValue[selectValue.label]);
 
   const handleChangeSelect = useCallback((event) => {
     setSelectValue({
@@ -16,10 +16,12 @@ export const VersatileForm = memo(() => {
   }, []);
 
   const handleChangeText = useCallback((event) => {
-    setTextValue(event.target.value);
-  }, []);
+    setTextValue((textValue) => ({
+      ...textValue,
+      [event.target.name]: event.target.value,
+    }))}, []);
 
-  console.log(selectValue);
+  console.log(textValue);
 
   return (
     <>
