@@ -3,6 +3,7 @@ import { initialTextValue, SELECT_VALUES } from "../../const";
 import { SelectBox } from "./SelectBox";
 import { TextFields } from "./TextFields";
 
+
 export const TemplateForm = memo(() => {
   /** SelectBox についての state */
   const [selectValue, setSelectValue] = useState(SELECT_VALUES[1]);
@@ -39,6 +40,7 @@ export const TemplateForm = memo(() => {
         textValue={textValue}
         handleChange={handleChangeText}
       />
+
     </>
   );
 });

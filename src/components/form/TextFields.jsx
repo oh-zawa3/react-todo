@@ -12,7 +12,6 @@ import TextField from '@mui/material/TextField';
 export const TextFields = (props) => {
   const { title, textValue, handleChange } = props;
 
-
   return (
     <Box
       component="form"
@@ -28,7 +27,8 @@ export const TextFields = (props) => {
         name={title}
         label={`ここに${title}を入力`}
         variant="outlined"
-        value={textValue[title]}
+        // ↓エラー解消のため一時コメントアウト
+        // value={textValue[title]}
         onChange={handleChange}
       />
     </Box>
