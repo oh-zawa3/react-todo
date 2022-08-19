@@ -2,9 +2,15 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
+/**
+ * form の一般化
+ * title: セレクトボックスで選択されている値(label)
+ * textValue: formの値
+ * @param props
+ * @returns
+ */
 export const TextFields = (props) => {
   const { title, textValue, handleChange } = props;
-
 
   return (
     <Box
@@ -21,7 +27,8 @@ export const TextFields = (props) => {
         name={title}
         label={`ここに${title}を入力`}
         variant="outlined"
-        value={textValue[title]}
+        // ↓エラー解消のため一時コメントアウト
+        // value={textValue[title]}
         onChange={handleChange}
       />
     </Box>

@@ -3,10 +3,14 @@ import { initialTextValue, SELECT_VALUES } from "../../const";
 import { SelectBox } from "./SelectBox";
 import { TextFields } from "./TextFields";
 
-export const TemplateForm = memo(() => {
-  const [selectValue, setSelectValue] = useState(SELECT_VALUES[1]);
-  const [textValue, setTextValue] = useState(initialTextValue[selectValue.label]);
 
+export const TemplateForm = memo(() => {
+  /** SelectBox についての state */
+  const [selectValue, setSelectValue] = useState(SELECT_VALUES[1]);
+  /** TextFields についての state */
+  const [textValue, setTextValue] = useState(initialTextValue);
+
+  /** SelectBoxの値の管理 */
   const handleChangeSelect = useCallback((event) => {
     setSelectValue({
       value: event.target.value,
@@ -15,6 +19,7 @@ export const TemplateForm = memo(() => {
     setTextValue("");
   }, []);
 
+  /** TextFieldsの値の管理 */
   const handleChangeText = useCallback((event) => {
     setTextValue((textValue) => ({
       ...textValue,
@@ -35,6 +40,7 @@ export const TemplateForm = memo(() => {
         textValue={textValue}
         handleChange={handleChangeText}
       />
+
     </>
   );
 });

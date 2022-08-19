@@ -3,7 +3,13 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 
-
+/**
+ * select の一般化
+ * items: セレクトボックスの選択肢の値のセット
+ * selectValue: セレクトボックスの選択中の値
+ * @param props
+ * @returns
+ */
 export const SelectBox = (props) => {
   const { items, handleChange, selectValue } = props;
 
