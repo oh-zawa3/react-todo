@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useState } from "react";
-import { initialTextValue, SELECT_VALUES } from "../../const";
+import { buttonName, initialTextValue, SELECT_VALUES } from "../../const";
+import { TemplateButton } from "../button";
 import { SelectBox } from "./SelectBox";
 import { TextFields } from "./TextFields";
 
@@ -10,7 +11,7 @@ export const TemplateForm = memo(() => {
   /** TextFields についての state */
   const [textValue, setTextValue] = useState(initialTextValue);
 
-  /** SelectBoxの値の管理 */
+  /** SelectBox の値の管理 */
   const handleChangeSelect = useCallback((event) => {
     setSelectValue({
       value: event.target.value,
@@ -19,14 +20,28 @@ export const TemplateForm = memo(() => {
     setTextValue(initialTextValue);
   }, []);
 
-  /** TextFieldsの値の管理 */
+  /** TextFields の値の管理 */
   const handleChangeText = useCallback((event) => {
     setTextValue((textValue) => ({
       ...textValue,
       [event.target.name]: event.target.value,
-    }))}, []);
+    }))
+  }, []);
 
   console.log(textValue);
+
+  //   /** 全てのボタンの挙動の管理  */
+  // const handleClickButton = useCallBack((buttonName, event) => {
+  //   /** textValue の追加の処理 */
+  //   // buttonNameがそれぞれ”add,complete,remove"の時の挙動を書く
+  //   if (buttonName === "add" && textValue !== "") {
+  //     return null;
+  //   }
+  //   if (textValue === "") {
+  //     return null;
+  //   }
+  // }, []);
+
 
   return (
     <>
@@ -40,7 +55,11 @@ export const TemplateForm = memo(() => {
         textValue={textValue}
         handleChange={handleChangeText}
       />
-
+      <TemplateButton
+        title="追加"
+        // buttonName={buttonName}
+        // handleClick={handleClickButton}
+      />
     </>
   );
 });
