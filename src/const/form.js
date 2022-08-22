@@ -21,3 +21,10 @@ export const initialTextValue = {
   todo: "",
   tag: "",
 };
+
+/** ボタンの種類 */
+export const buttonName = {
+  add: '追加',
+  complete: '完了',
+  remove: '削除',
+}
