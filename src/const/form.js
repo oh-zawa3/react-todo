@@ -15,6 +15,7 @@ export const SELECT_VALUES = [
   },
 ];
 
+/** textValue の初期値 */
 export const initialTextValue = {
   user: "",
   todo: "",
