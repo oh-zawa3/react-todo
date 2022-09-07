@@ -9,10 +9,11 @@ export const TemplateButton = (props) => {
     <Stack spacing={2} direction="row">
       <Button
         variant="contained"
+        name={title}
+        onClick={handleClick}
         // buttonName={buttonName}
-        // onClick={handleClick}
       >
-        {title}
+        追加
       </Button>
     </Stack>
   );

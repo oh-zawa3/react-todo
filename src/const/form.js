@@ -22,6 +22,11 @@ export const initialTextValue = {
   tag: "",
 };
 
+/** textValue の初期値 */
+export const outputTextValue = {
+  selector: "",
+};
+
 /** ボタンの種類 */
 export const buttonName = {
   add: '追加',
