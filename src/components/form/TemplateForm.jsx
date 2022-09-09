@@ -10,8 +10,7 @@ export const TemplateForm = memo(() => {
   const [selectValue, setSelectValue] = useState(SELECT_VALUES[1]);
   /** TextFields についての state */
   const [textValue, setTextValue] = useState(initialTextValue);
-  /**TemplateButtonについての state */
-  const [outputValue, setOutputValue] = useState({});
+  
 
   /** SelectBox の値の管理 */
   const handleChangeSelect = useCallback((event) => {
@@ -33,13 +32,11 @@ export const TemplateForm = memo(() => {
   console.log(textValue);
 
     /** 全てのボタンの挙動の管理  */
-  const handleClickButton = useCallback((event) => {
-    setOutputValue((outputValue) => ({
-      ...outputValue,
-      [event.target.title]: event.target.value
-    }))
-    alert(outputValue);
-  }, []);
+  const handleClickButton = useCallback(() => {
+    return alert(`${selectValue.value}: ${textValue[selectValue.value]}`);
+
+}, [selectValue, textValue]);
+
 
 
   return (
@@ -57,7 +54,6 @@ export const TemplateForm = memo(() => {
       <TemplateButton
         title={selectValue}
         outputValue={textValue}
-        // buttonName={buttonName}
         handleClick={handleClickButton}
       />
     </>
